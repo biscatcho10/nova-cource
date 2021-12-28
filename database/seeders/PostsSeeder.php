@@ -22,7 +22,8 @@ class PostsSeeder extends Seeder
                 'name' => $faker->word(),
                 'description' => $faker->text(),
                 'date_published' => $faker->dateTime(),
-                'is_active' => $faker->boolean()
+                'is_active' => $faker->boolean(),
+                'user_id' => 1
             ]);
         }
     }

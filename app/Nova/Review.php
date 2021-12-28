@@ -3,31 +3,20 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Gravatar;
-use Laravel\Nova\Fields\HasMany;
-use Laravel\Nova\Fields\HasOne;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\MorphMany;
-use Laravel\Nova\Fields\Password;
+use Laravel\Nova\Fields\MorphTo;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Http\Requests\NovaRequest;
 
-class User extends TotalCountsResource
+class Review extends Resource
 {
 
     // arrange items in the sidebar
-    public static $priority = 10;
+    public static $priority = 20;
 
-    public static $indexDefaultOrder = ['name' => 'desc'];
-
-
-    /**
-     * The icon of the resource.
-     *
-     * @return string
-     */
     public static function icon()
     {
-        return '<i class="fas fa-users"></i>';
+        return '<i class="fas fa-comment"></i>';
     }
 
     /**
@@ -35,16 +24,14 @@ class User extends TotalCountsResource
      *
      * @var string
      */
-    public static $model = \App\Models\User::class;
+    public static $model = \App\Models\Review::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public static $title = 'name';
-    public static $group = 'Users';
-
+    public static $title = 'id';
 
     /**
      * The columns that should be searched.
@@ -52,7 +39,7 @@ class User extends TotalCountsResource
      * @var array
      */
     public static $search = [
-        'id', 'name', 'email',
+        'id',
     ];
 
     /**
@@ -64,29 +51,8 @@ class User extends TotalCountsResource
     public function fields(Request $request)
     {
         return [
-            ID::make()->sortable(),
-
-            Gravatar::make()->maxWidth(50),
-
-            Text::make('Name')
-                ->sortable()
-                ->rules('required', 'max:255'),
-
-            Text::make('Email')
-                ->sortable()
-                ->rules('required', 'email', 'max:254')
-                ->creationRules('unique:users,email')
-                ->updateRules('unique:users,email,{{resourceId}}'),
-
-            Password::make('Password')
-                ->onlyOnForms()
-                ->creationRules('required', 'string', 'min:8')
-                ->updateRules('nullable', 'string', 'min:8'),
-
-            HasMany::make('Posts'),
-            HasOne::make('Address'),
-            MorphMany::make('Reviews'),
-
+            ID::make(__('ID'), 'id')->sortable(),
+            Text::make('Content'),
         ];
     }
 

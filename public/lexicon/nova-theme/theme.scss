@@ -1,0 +1,39 @@
+$white: #fff;
+
+:root {
+  --primary: #1E4E79;
+  --primary-dark: #053057;
+  --primary-70: rgba(254, 1, 129, 0.7);
+  --primary-50: rgba(254, 1, 129, 0.5);
+  --primary-30: rgba(254, 1, 129, 0.3);
+  --primary-10: rgba(254, 1, 129, 0.1);
+  --logo: #430051;
+  --sidebar-icon: --primary;
+}
+
+.bg-grad-sidebar {
+  background-image: linear-gradient(0deg, $white, $white);
+
+  .h-header {
+    background-color: --primary;
+  }
+
+  a,
+  .sidebar-label {
+    color: var(--primary);
+  }
+}
+
+.content {
+  .h-header {
+    background-color: transparent;
+    box-shadow: none;
+    .form-global-search {
+      background-color: $white;
+    }
+  }
+}
+
+.dim:active, .dim:hover {
+  opacity: 0.8;
+}

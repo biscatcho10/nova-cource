@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Cards\Help;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
+use Anaseqal\NovaSidebarIcons\NovaSidebarIcons;
+use App\Nova\Post;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -16,6 +18,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     public function boot()
     {
+        Nova::sortResourcesBy(function ($resource) {
+            return $resource::$priority ?? 9999;
+        });
         parent::boot();
     }
 
@@ -27,9 +32,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function routes()
     {
         Nova::routes()
-                ->withAuthenticationRoutes()
-                ->withPasswordResetRoutes()
-                ->register();
+            ->withAuthenticationRoutes()
+            ->withPasswordResetRoutes()
+            ->register();
     }
 
     /**
@@ -77,7 +82,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      */
     public function tools()
     {
-        return [];
+        return [
+            new NovaSidebarIcons,
+
+        ];
     }
 
     /**
@@ -88,5 +96,16 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function register()
     {
         //
+    }
+
+
+    // view resources
+    public function resources()
+    {
+        Nova::resourcesIn(app_path('Nova'));
+
+        // Nova::resources([
+        //     Post::class
+        // ]);
     }
 }

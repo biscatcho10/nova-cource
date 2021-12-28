@@ -6,12 +6,15 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "anaseqal/nova-sidebar-icons": "^0.0.3",
+        "david-griffiths/nova-dark-theme": "^1.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "interaction-design-foundation/nova-html-card": "^1.2",
         "laravel/framework": "^8.65",
+        "laravel/nova": "*",
         "laravel/sanctum": "^2.11",
-        "laravel/tinker": "^2.5",
-        "laravel/nova": "*"
+        "laravel/tinker": "^2.5"
     },
     "repositories": [
         {

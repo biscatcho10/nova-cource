@@ -8,18 +8,25 @@ use App\Nova\Metrics\NewUsers;
 use App\Nova\Metrics\PostsByActiveType;
 use App\Nova\Metrics\PostsPerDay;
 use Carbon\Carbon;
-use Exception;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\MorphMany;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
-use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
-class Post extends Resource
+class Post extends TotalCountsResource
 {
+    public static $indexDefaultOrder = ['name' => 'desc'];
+
+    public static function icon()
+    {
+        return '<i class="far fa-edit"></i>';
+    }
     /**
      * The model the resource corresponds to.
      *
@@ -32,7 +39,7 @@ class Post extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'details';
 
     /**
      * The columns that should be searched.
@@ -40,14 +47,14 @@ class Post extends Resource
      * @var array
      */
     public static $search = [
-        'id',
+        'name', 'description'
     ];
 
     // show in side bar
     public static $displayInNavigation = true;
 
     // put in group in side bar
-    public static $group = "Admin";
+    public static $group = "Other";
 
     // make resource data searchable or not
     public static $globallySearchable = true;
@@ -77,7 +84,15 @@ class Post extends Resource
                 }
             }),
 
-            Boolean::make('Active?', 'is_active')
+            // Image::make('Image'),
+
+            BelongsToMany::make('Tags'),
+
+            MorphMany::make('Reviews'),
+
+            BelongsTo::make('User'),
+
+            Boolean::make('Active?', 'is_active'),
         ];
     }
 

@@ -4,8 +4,53 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "01ea80e63b4703f0e2ec3bb440018be6",
+    "content-hash": "709ab711b4277f4aea9e1046469bf856",
     "packages": [
+        {
+            "name": "anaseqal/nova-sidebar-icons",
+            "version": "0.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/anaseqal/nova-sidebar-icons.git",
+                "reference": "ceb18c4943c36aa1eeebb6bd60c4f2daa24c2b00"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/anaseqal/nova-sidebar-icons/zipball/ceb18c4943c36aa1eeebb6bd60c4f2daa24c2b00",
+                "reference": "ceb18c4943c36aa1eeebb6bd60c4f2daa24c2b00",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Anaseqal\\NovaSidebarIcons\\ToolServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Anaseqal\\NovaSidebarIcons\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova tool.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/anaseqal/nova-sidebar-icons/issues",
+                "source": "https://github.com/anaseqal/nova-sidebar-icons/tree/0.0.3"
+            },
+            "time": "2019-08-29T18:49:20+00:00"
+        },
         {
             "name": "asm89/stack-cors",
             "version": "v2.0.3",
@@ -241,6 +286,61 @@
                 "source": "https://github.com/cakephp/chronos"
             },
             "time": "2021-10-17T02:44:05+00:00"
+        },
+        {
+            "name": "david-griffiths/nova-dark-theme",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/David-Griffiths/Nova-Dark-Theme.git",
+                "reference": "dfd190f4d3454e5ec066b886ad687c135b680f3b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/David-Griffiths/Nova-Dark-Theme/zipball/dfd190f4d3454e5ec066b886ad687c135b680f3b",
+                "reference": "dfd190f4d3454e5ec066b886ad687c135b680f3b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "DavidGriffiths\\NovaDarkTheme\\ThemeServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "DavidGriffiths\\NovaDarkTheme\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Griffiths",
+                    "homepage": "https://github.com/David-Griffiths",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A dark theme for Laravel Nova",
+            "homepage": "https://github.com/David-Griffiths/Nova-Dark-Theme",
+            "keywords": [
+                "dark",
+                "laravel",
+                "nova",
+                "theme"
+            ],
+            "support": {
+                "issues": "https://github.com/David-Griffiths/Nova-Dark-Theme/issues",
+                "source": "https://github.com/David-Griffiths/Nova-Dark-Theme"
+            },
+            "time": "2019-02-16T22:07:27+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -1425,6 +1525,55 @@
             "time": "2021-10-06T17:43:30+00:00"
         },
         {
+            "name": "interaction-design-foundation/nova-html-card",
+            "version": "1.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/InteractionDesignFoundation/nova-html-card.git",
+                "reference": "0882447c573a242a893ae3038773633d6d0842ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/InteractionDesignFoundation/nova-html-card/zipball/0882447c573a242a893ae3038773633d6d0842ba",
+                "reference": "0882447c573a242a893ae3038773633d6d0842ba",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "IDF\\HtmlCard\\CardServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "IDF\\HtmlCard\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova card to display arbitrary HTML content",
+            "keywords": [
+                "card",
+                "html",
+                "laravel",
+                "markdown",
+                "nova",
+                "text"
+            ],
+            "support": {
+                "issues": "https://github.com/InteractionDesignFoundation/nova-html-card/issues",
+                "source": "https://github.com/InteractionDesignFoundation/nova-html-card/tree/1.2.2"
+            },
+            "time": "2020-03-16T16:51:12+00:00"
+        },
+        {
             "name": "laravel/framework",
             "version": "v8.77.1",
             "source": {
@@ -1877,16 +2026,16 @@
         },
         {
             "name": "laravel/ui",
-            "version": "v3.4.0",
+            "version": "v3.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/ui.git",
-                "reference": "b3e804559bf3973ecca160a4ae1068e6c7c167c6"
+                "reference": "9a1e52442dd238647905b98d773d59e438eb9f9d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/ui/zipball/b3e804559bf3973ecca160a4ae1068e6c7c167c6",
-                "reference": "b3e804559bf3973ecca160a4ae1068e6c7c167c6",
+                "url": "https://api.github.com/repos/laravel/ui/zipball/9a1e52442dd238647905b98d773d59e438eb9f9d",
+                "reference": "9a1e52442dd238647905b98d773d59e438eb9f9d",
                 "shasum": ""
             },
             "require": {
@@ -1932,9 +2081,9 @@
                 "ui"
             ],
             "support": {
-                "source": "https://github.com/laravel/ui/tree/v3.4.0"
+                "source": "https://github.com/laravel/ui/tree/v3.4.1"
             },
-            "time": "2021-11-30T16:22:00+00:00"
+            "time": "2021-12-22T10:40:50+00:00"
         },
         {
             "name": "league/commonmark",
