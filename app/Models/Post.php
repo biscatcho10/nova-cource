@@ -5,10 +5,18 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Astrotomic\Translatable\Translatable;
+use Astrotomic\Translatable\Contracts\Translatable as TranslatableContract;
 
-class Post extends Model
+
+
+class Post extends Model implements TranslatableContract
 {
+    use Translatable;
     protected $guarded = [];
+
+    public $translatedAttributes = ['name', 'description'];
+
 
     protected $casts = [
         'date_published' => 'date',

@@ -7,14 +7,17 @@
     "require": {
         "php": "^7.3|^8.0",
         "anaseqal/nova-sidebar-icons": "^0.0.3",
+        "astrotomic/laravel-translatable": "^11.9",
         "david-griffiths/nova-dark-theme": "^1.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "interaction-design-foundation/nova-html-card": "^1.2",
+        "kongulov/nova-tab-translatable": "^1.1",
         "laravel/framework": "^8.65",
         "laravel/nova": "*",
         "laravel/sanctum": "^2.11",
-        "laravel/tinker": "^2.5"
+        "laravel/tinker": "^2.5",
+        "spatie/laravel-translatable": "^4.6"
     },
     "repositories": [
         {
